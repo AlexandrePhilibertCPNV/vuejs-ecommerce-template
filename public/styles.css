@@ -1,0 +1,31 @@
+@font-face {
+	font-family:'Roboto';
+	src: url('/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+	font-family:'Roboto';
+	src: url('/fonts/Roboto-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+	font-family:'Roboto';
+	src: url('/fonts/Roboto-Bold.ttf');
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, 'Century Ghotic';
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
