@@ -70,7 +70,7 @@
       <h3>Contact</h3>
       <ul>
         <li>
-          <img src="" alt="" /><span>Route du chateau, 1450 Baulmes</span>
+          <PlaceSVG /><span>Route du chateau, 1450 Baulmes</span>
         </li>
         <li><img src="" alt="" /><span>+41 21 346 78 90</span></li>
         <li><img src="" alt="" /><span>contact@brioshop.ch</span></li>
@@ -80,39 +80,44 @@
 </template>
 
 <script>
-export default {};
+export default {
+  components: {
+
+  }
+};
 </script>
 
 <style lang="sass" scoped>
 footer
-    display: flex
-    flex-direction: row
-    padding: 0 10em
+  display: flex
+  flex-direction: row
+  padding: 0 10em
 
 a
-    text-decoration: none
-    color: inherit
+  text-decoration: none
+  color: inherit
 
 h3
-    font-weight: bold
-    padding: .5em
-    margin: 0
+  font-weight: bold
+  padding: .5em
+  margin: 0
 
 ul
-    padding: 0
+  padding: 0
 
 ul > li
-    padding: .5em
+  padding: .5em
 
 footer > div
-    flex: 1 1 20%
+  flex: 1 1 20%
 
 .footer-text
-    color: #7d7d7d
+  color: #7d7d7d
 
 .logo
-    font-weight: normal
+  font-weight: normal
+  user-select: none
 
-    & > span:last-child
-        color: red
+  & > span:last-child
+    color: red
 </style>
