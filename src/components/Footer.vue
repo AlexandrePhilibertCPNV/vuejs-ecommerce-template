@@ -80,9 +80,11 @@
 </template>
 
 <script>
+import PlaceSVG from "../assets/place.svg";
+
 export default {
   components: {
-
+    PlaceSVG,
   }
 };
 </script>
