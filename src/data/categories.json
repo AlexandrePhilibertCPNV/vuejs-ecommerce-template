@@ -1,0 +1,120 @@
+[
+    {
+        "id": 1,
+        "name": "Salles de bains et sanitaires",
+        "subcategories": [
+            {
+                "id": 10,
+                "name": "Robinetteries de salles de bains"
+            },
+            {
+                "id": 11,
+                "name": "Baignoires"
+            },
+            {
+                "id": 12,
+                "name": "Céramique de salles de bains"
+            },
+            {
+                "id": 13,
+                "name": "Meubles de salle de bains"
+            },
+            {
+                "id": 14,
+                "name": "Douches"
+            },
+            {
+                "id": 15,
+                "name": "Pommeaux & systèmes de douche"
+            },
+            {
+                "id": 16,
+                "name": "Chauffe-eau"
+            },
+            {
+                "id": 17,
+                "name": "Equipement de salles de bains"
+            },
+            {
+                "id": 18,
+                "name": "Réserois de chasse d'eau & éléments muraux"
+            },
+            {
+                "id": 19,
+                "name": "Installation sanitaire"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Matériaux de construction",
+        "subcategories": [
+            {
+                "id": 20,
+                "name": "Matériaux de construction"
+            },
+            {
+                "id": 21,
+                "name": "Construction de meubles"
+            },
+            {
+                "id": 22,
+                "name": "Revêtements ural & revêtement de plafond"
+            },
+            {
+                "id": 23,
+                "name": "Bois de construction"
+            },
+            {
+                "id": 24,
+                "name": "Panneaux OSB & panneaux de pose"
+            },
+            {
+                "id": 25,
+                "name": "Portes intérieures & cadres"
+            },
+            {
+                "id": 26,
+                "name": "Portes d'entrée"
+            },
+            {
+                "id": 27,
+                "name": "Portes de garage, motorisation"
+            },
+            {
+                "id": 28,
+                "name": "Fenêtres"
+            },
+            {
+                "id": 29,
+                "name": "Stores bannes"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Revêtements de sols & carrelages",
+        "subcategories": [
+            {
+                "id": 30,
+                "name": "Rêvetements de sol"
+            },
+            {
+                "id": 31,
+                "name": "Carrelages et accessoirs pour carrelage"
+            },
+            {
+                "id": 32,
+                "name": "Revêtements plat & listel"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Quincaillerie"
+    },
+    {
+        "id": 5,
+        "name": "Jardin"
+    }
+]
