@@ -132,6 +132,7 @@ footer > div
 .logo
   font-weight: normal
   user-select: none
+  font-family: DIRTYBAG
 
   & > span:last-child
     color: red
