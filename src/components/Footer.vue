@@ -70,10 +70,10 @@
       <h3>Contact</h3>
       <ul>
         <li>
-          <PlaceSVG /><span>Route du chateau, 1450 Baulmes</span>
+          <PlaceSVG class="fill-red" /><div>Route du chateau 12, 1450 Baulmes</div>
         </li>
-        <li><img src="" alt="" /><span>+41 21 346 78 90</span></li>
-        <li><img src="" alt="" /><span>contact@brioshop.ch</span></li>
+        <li><PhoneSVG class="fill-red" /><div>+41 21 346 78 90</div></li>
+        <li><EmailSVG class="fill-red" /><div>contact@brioshop.ch</div></li>
       </ul>
     </div>
   </footer>
@@ -81,10 +81,14 @@
 
 <script>
 import PlaceSVG from "../assets/place.svg";
+import PhoneSVG from "../assets/phone.svg";
+import EmailSVG from "../assets/email.svg";
 
 export default {
   components: {
     PlaceSVG,
+    PhoneSVG,
+    EmailSVG,
   }
 };
 </script>
@@ -109,6 +113,15 @@ ul
 
 ul > li
   padding: .5em
+
+  & > *
+    vertical-align: middle
+
+  & > div
+    display: inline-block
+
+  & > svg
+    margin: .25em
 
 footer > div
   flex: 1 1 20%
