@@ -1,7 +1,11 @@
 <template>
   <div>
     <Header />
-    <Jumbotron />
+    <Jumbotron title="Reduction sur les articles de jardin"/>
+    <section>
+      <h1>Les offres actuelles</h1>
+      <div></div>
+    </section>
     <Newsletter />
     <Footer />
   </div>
@@ -22,3 +26,8 @@ export default {
   },
 };
 </script>
+
+<style lang="sass" scoped>
+h1
+  text-align: center
+</style>
