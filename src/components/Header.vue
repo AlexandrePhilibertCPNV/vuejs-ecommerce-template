@@ -14,15 +14,31 @@
         <input placeholder="Rechercher" type="search" />
         <button><SearchSVG /></button>
       </div>
-      <div>
-        <router-link to=""><FavoriteSVG /></router-link>
-        <router-link to=""><ShoppingCartSVG /></router-link>
-        <router-link to=""><AccountSVG /></router-link>
+      <div class="actions">
+        <router-link data-badge="3" to=""><FavoriteSVG /></router-link>
+        <router-link data-badge="10" to=""><ShoppingCartSVG /></router-link>
+        <router-link class="account" to=""><AccountSVG /></router-link>
       </div>
     </div>
     <div class="header-bottom">
-      <ul>
-        <li v-for="(category, i) in categories" :key="i">{{ category }}</li>
+      <ul class="categories">
+        <li class="category" v-for="(category, i) in categories" :key="i">
+          <router-link :to="'/category/' + category.id">
+            <span>{{ category.name }}</span
+            ><ExpandMoreSVG />
+          </router-link>
+          <ul class="sub-categories">
+            <li
+              class="sub-category"
+              v-for="(subcategory, j) in category.subcategories"
+              :key="j"
+            >
+              <router-link :to="'/category/' + subcategory.id">
+                {{ subcategory.name }}
+              </router-link>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
   </header>
@@ -36,6 +52,9 @@ import SearchSVG from "../assets/search.svg";
 import FavoriteSVG from "../assets/favorite.svg";
 import ShoppingCartSVG from "../assets/shopping-cart.svg";
 import AccountSVG from "../assets/account.svg";
+import ExpandMoreSVG from "../assets/expand-more.svg";
+
+import categories from "../data/categories.json";
 
 export default {
   components: {
@@ -46,16 +65,11 @@ export default {
     FavoriteSVG,
     ShoppingCartSVG,
     AccountSVG,
+    ExpandMoreSVG,
   },
   data() {
     return {
-      categories: [
-        "Salles de bain & sanitaires",
-        "Matériaux de construction",
-        "Revêtements de sol / carrelages",
-        "Quincaillerie",
-        "Jardin",
-      ],
+      categories,
     };
   },
 };
@@ -66,6 +80,7 @@ export default {
   font-size: 1.5em
   font-weight: normal
   user-select: none
+  font-family: DIRTYBAG
 
   & > span:last-child
     color: red
@@ -149,5 +164,79 @@ export default {
         vertical-align: middle
         margin: 0 .25em
 
+.actions
+  display: flex
+  flex-direction: row
+  align-items: center
+
+  & > a
+    position: relative
+    padding: .25em .5em
+    margin: 0 .25em
+    text-decoration: none
+    font-size: .8em
+    width: 3em
+
+    &[data-badge]:after
+      position: absolute
+      user-select: none
+      padding: 0 .33em
+      border-radius: .5em
+      top: 0
+      right: 0
+      content: attr(data-badge)
+      background-color: #c80000
+      color: #fff
+
+a.account
+  width: 4em
+  height: 4em
+
 .header-bottom
+  display: flex
+  justify-content: center
+  border-bottom: 1px solid #d7d7d7
+
+.categories
+  display: flex
+  width: max-content
+  flex-direction: row
+  justify-content: space-between
+
+  & > .category
+    position: relative
+    padding: .5em
+
+    &:hover .sub-categories
+      display: block
+
+    & > a
+      text-decoration: none
+      color: inherit
+
+      &:hover
+        fill: #c80000
+        color: #c80000
+
+      & > *
+        vertical-align: middle
+
+.sub-categories
+  display: none
+  position: absolute
+  background-color: #fff
+  padding: .5em
+  font-size: .9em
+  z-index: 10
+  box-shadow: 1px 1px 4px rgba(40, 40, 40, 0.2)
+
+  & > .sub-category
+    padding: .5em
+
+    & > a
+      text-decoration: none
+      color: #000
+
+      &:hover
+        color: #c80000
 </style>
