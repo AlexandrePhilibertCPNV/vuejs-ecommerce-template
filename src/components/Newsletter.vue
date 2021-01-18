@@ -1,7 +1,7 @@
 <template>
   <section class="newsletter">
     <img class="background" src="../assets/newsletter-bg.jpg" alt="" />
-    <h1>Culpa esse magna magna duis duis.</h1>
+    <h1>Inscrivez vous à la newsletter pour ne rien raté !</h1>
     <div class="subscribe-box">
       <div class="subscribe-input">
         <input type="email" placeholder="Entrez votre adresse email"/>
@@ -39,8 +39,9 @@ export default {
 h1
     text-align: center
     font-size: 2em
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25)
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75)
     margin-top: 0
+    color: #fff
 
 .subscribe-box
     display: flex

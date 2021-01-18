@@ -9,7 +9,9 @@
       <div class="lang"><a href="">DE</a>|<a href="">FR</a></div>
     </div>
     <div class="middle-header">
-      <h1 class="logo"><span>Brico</span><span>shop</span></h1>
+      <a href="/" class="logo-link">
+        <h1 class="logo"><span>Brico</span><span>shop</span></h1></a
+      >
       <div class="searchbar">
         <input placeholder="Rechercher" type="search" />
         <button><SearchSVG /></button>
@@ -76,11 +78,15 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.logo-link
+  text-decoration: none
+
 .logo
   font-size: 1.5em
   font-weight: normal
   user-select: none
   font-family: DIRTYBAG
+  color: #000
 
   & > span:last-child
     color: red
