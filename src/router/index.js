@@ -1,5 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from '../views/Home.vue';
+import ShoppingCart from '../views/ShoppingCart.vue';
+
 
 const routes = [
   {
@@ -7,6 +9,16 @@ const routes = [
     name: Home,
     component: Home,
   },
+  {
+    path: '/cart',
+    name: ShoppingCart,
+    component: ShoppingCart,
+    meta: {
+      breadcrumbs: [
+        { name: 'Panier', link: 'cart' },
+      ],
+    },
+  }
 ]
 
 const router = createRouter({
