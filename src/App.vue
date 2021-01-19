@@ -1,17 +1,16 @@
 <template>
-  <router-view></router-view>
+  <Header />
+  <router-view />
+  <Footer />
 </template>
 
 <script>
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 export default {
-  data() {
-    return {
-      message: "Learn Vue"
-    };
+  components: {
+    Header,
+    Footer,
   }
 };
 </script>
-
-<style>
-
-</style>

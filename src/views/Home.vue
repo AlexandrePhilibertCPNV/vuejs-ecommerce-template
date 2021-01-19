@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <Jumbotron class="jumbotron" title="Reduction sur les articles de jardin" />
     <section>
       <h1>Les offres actuelles</h1>
@@ -22,7 +21,7 @@
     <section>
       <h1>Les meilleures categories</h1>
       <div class="promoted-categories">
-        <CategoryCard :category="categories[0].subcategories[2]" />
+        <CategoryCard :category="categories[0].subcategories[1]" />
         <CategoryCard :category="categories[1].subcategories[3]" />
         <CategoryCard :category="categories[3].subcategories[5]" />
         <CategoryCard :category="categories[3]" />
@@ -33,18 +32,15 @@
         <Newsletter class="newsletter" />
       </div>
     </section>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
 import Jumbotron from "../components/Jumbotron.vue";
 import Card from "../components/Card.vue";
 import GuideCard from "../components/GuideCard.vue";
 import CategoryCard from "../components/CategoryCard.vue";
 import Newsletter from "../components/Newsletter.vue";
-import Footer from "../components/Footer.vue";
 
 import categories from "../data/categories.json";
 
@@ -58,13 +54,11 @@ export default {
     };
   },
   components: {
-    Header,
     Jumbotron,
     Card,
     GuideCard,
     CategoryCard,
     Newsletter,
-    Footer,
   },
 };
 </script>
