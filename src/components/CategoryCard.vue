@@ -1,8 +1,8 @@
 <template>
-  <div class="category-card">
+  <router-link to="" class="category-card">
     <img class="img" src="https://picsum.photos/300/500" alt="" />
-    <a class="link" href="">{{ category?.name }}</a>
-  </div>
+    <button class="link">{{ category?.name }}</button>
+  </router-link>
 </template>
 
 <script>
@@ -17,7 +17,13 @@ export default {
     display: flex
     flex-direction: column
     justify-content: flex-end
+    text-decoration: none
     padding: 1em
+    overflow: hidden
+    cursor: pointer
+
+    &:hover > .img
+      transform: scale(1.1)
 
 .img
     position: absolute
@@ -26,11 +32,11 @@ export default {
     top: 0
     left: 0
     z-index: -1
+    transition: transform 0.5s ease
 
 .link
     width: max-content
     padding: .5em 1.5em
-    text-decoration: none
     border: 3px solid #fff
     border-radius: .25em
     width: 100%
@@ -39,4 +45,5 @@ export default {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, .5)
     text-shadow: 1px 1px 10px rgba(0, 0, 0, .75)
     background-color: rgba(50, 50, 50, .25)
+    cursor: pointer
 </style>
