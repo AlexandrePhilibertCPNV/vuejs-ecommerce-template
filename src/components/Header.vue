@@ -45,20 +45,13 @@
         </li>
       </ul>
     </div>
-    <div  v-if="breadcrumbs && breadcrumbs.length > 0" class="header-breadcrumbs">
-      <ul>
-        <li class="home-breadcrumb">
-          <router-link to="/"><HomeSVG /></router-link>
-        </li>
-        <li v-for="(breadcrumb, i) in breadcrumbs" :key="i">
-          <router-link :to="breadcrumb.link">{{ breadcrumb.name }}</router-link>
-        </li>
-      </ul>
-    </div>
+    <Breadcrumb />
   </header>
 </template>
 
 <script>
+import Breadcrumb from '../components/Breadcrumb.vue';
+
 import PhoneSVG from "../assets/phone.svg";
 import EmailSVG from "../assets/email.svg";
 import StoreSVG from "../assets/store.svg";
@@ -67,12 +60,12 @@ import FavoriteSVG from "../assets/favorite.svg";
 import ShoppingCartSVG from "../assets/shopping-cart.svg";
 import AccountSVG from "../assets/account.svg";
 import ExpandMoreSVG from "../assets/expand-more.svg";
-import HomeSVG from "../assets/home.svg";
 
 import categories from "../data/categories.json";
 
 export default {
   components: {
+    Breadcrumb,
     PhoneSVG,
     EmailSVG,
     StoreSVG,
@@ -81,22 +74,13 @@ export default {
     ShoppingCartSVG,
     AccountSVG,
     ExpandMoreSVG,
-    HomeSVG,
   },
   data() {
     return {
       categories,
-      breadcrumbs: [],
     };
   },
-  mounted() {
-    this.breadcrumbs = this.$route.meta.breadcrumbs;
-  },
-  watch: {
-    $route() {
-      this.breadcrumbs = this.$route.meta.breadcrumbs;
-    },
-  },
+
 };
 </script>
 
@@ -268,23 +252,4 @@ a.account
 
       &:hover
         color: #c80000
-
-.header-breadcrumbs
-  display: flex
-  justify-content: center
-  padding: .5em
-  border-bottom: 1px solid #d7d7d7
-  
-  & > ul
-    max-width: 1200px
-    width: 100%
-
-    & > li
-      display: inline-block
-      vertical-align: middle
-      margin: 0 .25em
-
-      & > a
-        text-decoration: none
-        color: inherit
 </style>

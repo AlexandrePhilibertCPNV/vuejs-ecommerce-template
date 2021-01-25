@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import ShoppingCart from '../views/ShoppingCart.vue';
-
+import Article from '../views/Article.vue';
 
 const routes = [
   {
@@ -18,6 +18,17 @@ const routes = [
         { name: 'Panier', link: 'cart' },
       ],
     },
+  },
+  {
+    path: '/article/:id',
+    name: Article,
+    component: Article,
+    meta: {
+      breadcrumbs: [
+        { name: 'Salles de bains et sanitaires', link: 'category/salles-de-bains-et-sanitaires' },
+        { name: 'Baignoires', link: 'category/baignoires'}
+      ]
+    }
   }
 ]
 
