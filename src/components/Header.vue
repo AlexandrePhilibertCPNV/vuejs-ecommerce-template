@@ -17,8 +17,8 @@
         <button><SearchSVG /></button>
       </div>
       <div class="actions">
-        <router-link data-badge="3" to=""><FavoriteSVG /></router-link>
-        <router-link data-badge="10" to="/cart"
+        <router-link :data-badge="favorites.length" to=""><FavoriteSVG /></router-link>
+        <router-link :data-badge="cart.length" to="/cart"
           ><ShoppingCartSVG
         /></router-link>
         <router-link class="account" to=""><AccountSVG /></router-link>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import Breadcrumb from '../components/Breadcrumb.vue';
+import Breadcrumb from "../components/Breadcrumb.vue";
 
 import PhoneSVG from "../assets/phone.svg";
 import EmailSVG from "../assets/email.svg";
@@ -80,7 +80,14 @@ export default {
       categories,
     };
   },
-
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+    favorites() {
+      return this.$store.state.favorites;
+    },
+  },
 };
 </script>
 
@@ -252,4 +259,8 @@ a.account
 
       &:hover
         color: #c80000
+
+@media screen and (max-width: 768px)
+  .top-header
+    display: none
 </style>

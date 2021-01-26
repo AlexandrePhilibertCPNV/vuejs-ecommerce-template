@@ -1,0 +1,80 @@
+import { createStore } from 'vuex';
+
+export default createStore({
+  state: {
+    cart: [],
+    favorites: [],
+  },
+  mutations: {
+    deleteCart(state, article) {
+      state.cart.splice(state.cart.indexOf(article), 1)
+    },
+    setCart(state, { article, quantity }) {
+      let existing = state.cart.find(art => art.id == article.id);
+
+      if (existing && quantity) {
+        existing.quantity = quantity;
+        return;
+      } else if (quantity == 0 || !quantity) {
+        if (existing) {
+          state.cart.splice(state.cart.indexOf(existing), 1);
+        }
+        return;
+      }
+
+      article.quantity = quantity;
+      state.cart.push(article);
+    },
+    addCart(state, { article, quantity }) {
+      let exisiting = state.cart.find(art => art.id == article.id);
+
+      if (exisiting) {
+        if (quantity) {
+          exisiting.quantity = quantity;
+        } else {
+          exisiting.quantity++;
+        }
+        return;
+      }
+
+      article.quantity = quantity || 1;
+      state.cart.push(article);
+    },
+    removeCart(state, { article }) {
+      if (!article) {
+        // We remove the entire cart
+        state.cart = [];
+        return;
+      }
+
+      let existing = state.cart.find(art => art.id == article.id);
+
+      // Article is not in the cart
+      if (!existing) {
+        return;
+      }
+
+      if (existing.quantity > 1) {
+        existing.quantity--;
+        return;
+      }
+
+      state.cart.splice(state.cart.indexOf(existing), 1);
+    },
+    toggleFavorite(state, article) {
+      let exisitingIndex = state.favorites.indexOf(article);
+
+      if (exisitingIndex != -1) {
+        state.favorites.splice(exisitingIndex, 1);
+
+        return;
+      }
+
+      state.favorites.push(article);
+    },
+  },
+  actions: {
+  },
+  modules: {
+  }
+})

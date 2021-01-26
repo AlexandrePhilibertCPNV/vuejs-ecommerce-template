@@ -28,9 +28,11 @@
           <div class="article-actions">
             <div class="cart-actions">
               <QuantityPicker />
-              <button class="cart-button">Ajouter au panier</button>
+              <button @click="addCart" class="cart-button">
+                Ajouter au panier
+              </button>
             </div>
-            <button class="favorite-button" title="Ajouter aux favoris">
+            <button @click="toggleFavorite" class="favorite-button" :class="{ 'favorite-button-active': isFavorite }" title="Ajouter aux favoris">
               <FavoriteSVG />
             </button>
           </div>
@@ -96,6 +98,7 @@ export default {
       article: {
         name: "Whirlpool Samba avec inverseur de couleur blanc",
         price: 1995.95,
+        id: 1,
       },
     };
   },
@@ -105,6 +108,22 @@ export default {
     ChevronLeftSVG,
     ChevronRightSVG,
     FavoriteSVG,
+  },
+  methods: {
+    addCart() {
+      this.$store.commit("addCart", { article: this.article, quantity: 1 });
+    },
+    toggleFavorite() {
+      this.$store.commit("toggleFavorite", this.article);
+    }
+  },
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+    isFavorite() {
+      return !!this.$store.state.favorites.find(article => article.id == this.article.id);
+    }
   },
 };
 </script>
@@ -221,6 +240,9 @@ hr
   cursor: pointer
   width: 2em
   height: 2em
+
+  &.favorite-button-active svg
+    fill: #c80000
 
   & svg
     fill: #d7d7d7
