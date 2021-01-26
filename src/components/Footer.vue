@@ -68,7 +68,7 @@
     </div>
     <div>
       <h3>Contact</h3>
-      <ul>
+      <ul class="contact">
         <li>
           <PlaceSVG class="fill-red" /><div>Route du chateau 12, 1450 Baulmes</div>
         </li>
@@ -97,7 +97,7 @@ export default {
 footer
   display: flex
   flex-direction: row
-  padding: 0 10em
+  margin: 0 5em
 
 a
   text-decoration: none
@@ -136,4 +136,8 @@ footer > div
 
   & > span:last-child
     color: red
+
+.contact li
+  display: flex
+  align-items: center
 </style>
