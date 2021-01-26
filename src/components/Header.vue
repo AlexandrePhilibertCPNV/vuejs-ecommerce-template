@@ -9,19 +9,23 @@
       <div class="lang"><a href="">DE</a>|<a href="">FR</a></div>
     </div>
     <div class="middle-header">
-      <a href="/" class="logo-link">
-        <h1 class="logo"><span>Brico</span><span>shop</span></h1></a
-      >
-      <div class="searchbar">
-        <input placeholder="Rechercher" type="search" />
-        <button><SearchSVG /></button>
-      </div>
-      <div class="actions">
-        <router-link :data-badge="favorites.length" to=""><FavoriteSVG /></router-link>
-        <router-link :data-badge="cart.length" to="/cart"
-          ><ShoppingCartSVG
-        /></router-link>
-        <router-link class="account" to=""><AccountSVG /></router-link>
+      <div>
+        <a href="/" class="logo-link">
+          <h1 class="logo"><span>Brico</span><span>shop</span></h1></a
+        >
+        <div class="searchbar">
+          <input placeholder="Rechercher" type="search" />
+          <button><SearchSVG /></button>
+        </div>
+        <div class="actions">
+          <router-link :data-badge="favorites.length" to=""
+            ><FavoriteSVG
+          /></router-link>
+          <router-link :data-badge="cart.length" to="/cart"
+            ><ShoppingCartSVG
+          /></router-link>
+          <router-link class="account" to=""><AccountSVG /></router-link>
+        </div>
       </div>
     </div>
     <div class="header-bottom">
@@ -142,10 +146,18 @@ export default {
 .middle-header
   display: flex
   flex-direction: row
-  justify-content: space-between
-  align-items: center
+  justify-content: center
   border-top: 1px solid #d7d7d7
   border-bottom: 1px solid #d7d7d7
+
+  & > div
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    flex: 1 0 auto
+
+    max-width: 1200px
 
   & svg
     fill: #d7d7d7
