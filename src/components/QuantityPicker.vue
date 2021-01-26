@@ -33,7 +33,7 @@ export default {
   },
   watch: {
     counter(value) {
-      if (value == 0) {
+      if (value === 0) {
         this.$store.commit("deleteCart", this.article);
       } else {
         this.$store.commit("setCart", {

@@ -73,11 +73,11 @@
         </li>
         <li>
           <PhoneSVG class="fill-red" />
-          <div>+41 21 346 78 90</div>
+          <div><a href="tel:+41 21 346 78 90">+41 21 346 78 90</a></div>
         </li>
         <li>
           <EmailSVG class="fill-red" />
-          <div>contact@brioshop.ch</div>
+          <div><a href="mailto:contact@brioshop.ch">contact@brioshop.ch</a></div>
         </li>
       </ul>
     </div>

@@ -6,7 +6,7 @@
       </li>
       <li v-for="(breadcrumb, i) in breadcrumbs" :key="i">
         <ChevronRightSVG />
-        <router-link :to="breadcrumb.link">{{ breadcrumb.name }}</router-link>
+        <router-link :to="breadcrumb.link ? breadcrumb.link : pathname">{{ breadcrumb.name }}</router-link>
       </li>
     </ul>
   </div>
@@ -25,6 +25,11 @@ export default {
   components: {
     HomeSVG,
     ChevronRightSVG,
+  },
+  computed: {
+    pathname() {
+      return window.location.pathname;
+    }
   },
   mounted() {
     this.breadcrumbs = this.$route.meta.breadcrumbs;

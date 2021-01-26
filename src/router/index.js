@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import ShoppingCart from '../views/ShoppingCart.vue';
 import Article from '../views/Article.vue';
+import OrderTracking from '../views/OrderTracking.vue';
 
 const routes = [
   {
@@ -15,7 +16,7 @@ const routes = [
     component: ShoppingCart,
     meta: {
       breadcrumbs: [
-        { name: 'Panier', link: 'cart' },
+        { name: 'Panier', link: '/cart' },
       ],
     },
   },
@@ -25,8 +26,19 @@ const routes = [
     component: Article,
     meta: {
       breadcrumbs: [
-        { name: 'Salles de bains et sanitaires', link: 'category/salles-de-bains-et-sanitaires' },
-        { name: 'Baignoires', link: 'category/baignoires'}
+        { name: 'Salles de bains et sanitaires', link: '/category/2' },
+        { name: 'Baignoires', link: '/category/baignoires' }
+      ]
+    }
+  },
+  {
+    path: '/orders/:id/tracking',
+    name: OrderTracking,
+    component: OrderTracking,
+    meta: {
+      breadcrumbs: [
+        { name: 'Commandes', link: '/orders' },
+        { name: 'Suivi' }
       ]
     }
   }
