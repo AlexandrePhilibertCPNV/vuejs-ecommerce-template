@@ -1,12 +1,16 @@
 <template>
   <header>
     <div class="top-header">
-      <router-link to=""
-        ><PhoneSVG /><span>contact@bricoshop.ch</span></router-link
-      >
-      <router-link to=""><EmailSVG /><span>+41 21 345 67 89</span></router-link>
-      <router-link to=""><StoreSVG /><span>Succurcales</span></router-link>
-      <div class="lang"><a href="">DE</a>|<a href="">FR</a></div>
+      <div>
+        <router-link to=""
+          ><PhoneSVG /><span>contact@bricoshop.ch</span></router-link
+        >
+        <router-link to=""
+          ><EmailSVG /><span>+41 21 345 67 89</span></router-link
+        >
+        <router-link to=""><StoreSVG /><span>Succurcales</span></router-link>
+        <div class="lang"><a href="">DE</a>|<a href="">FR</a></div>
+      </div>
     </div>
     <div class="middle-header">
       <div>
@@ -98,6 +102,7 @@ export default {
 <style lang="sass" scoped>
 .logo-link
   text-decoration: none
+  margin-left: .5em
 
 .logo
   font-size: 1.5em
@@ -112,24 +117,32 @@ export default {
 .top-header
   display: flex
   flex-direction: row
-  align-items: center
+  justify-content: center
 
-  & > a
-    padding: .5em
-    text-decoration: none
-    color: inherit
-    border-left: 1px solid #d7d7d7
+  & > div
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    flex: 1 0 auto
+    max-width: 1200px
 
-    &:hover
-      fill: #c80000
-      color: #c80000
+    & > a
+      padding: .5em
+      text-decoration: none
+      color: inherit
+      border-left: 1px solid #d7d7d7
 
-    & > *
-      margin: 0 .25em
-      vertical-align: middle
+      &:hover
+        fill: #c80000
+        color: #c80000
 
-    &:last-of-type
-      border-right: 1px solid #d7d7d7
+      & > *
+        margin: 0 .25em
+        vertical-align: middle
+
+      &:last-of-type
+        border-right: 1px solid #d7d7d7
 
 .lang
   text-align: right
@@ -156,7 +169,6 @@ export default {
     justify-content: space-between
     align-items: center
     flex: 1 0 auto
-
     max-width: 1200px
 
   & svg
@@ -164,7 +176,7 @@ export default {
 
 .searchbar
   display: flex
-  height: min-content
+  height: 2.5em
   background-color: #fff
   border: 1px solid #d7d7d7
   overflow: hidden
@@ -176,25 +188,19 @@ export default {
 
   & > input
     width: 300px
-    padding: .5em 1em
+    padding: .25em .5em
     border-right: 1px solid #d7d7d7
     font-family: inherit
 
   & > button
-    padding: .75em
     cursor: pointer
 
     & svg
+      margin-top: .5em
       fill: #d7d7d7
 
     &:hover
       background-color: #efefef
-      outline: none
-
-      & > *
-        display: inline-block
-        vertical-align: middle
-        margin: 0 .25em
 
 .actions
   display: flex

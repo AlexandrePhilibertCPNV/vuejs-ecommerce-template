@@ -1,7 +1,13 @@
 <template>
   <div class="picker">
     <button @click="decrement">-</button>
-    <input class="quantity" type="number" min="1" :value="quantity" />
+    <input
+      @submit="increment"
+      class="quantity"
+      type="number"
+      min="1"
+      v-model.number="counter"
+    />
     <button @click="increment">+</button>
   </div>
 </template>
@@ -10,15 +16,31 @@
 export default {
   data() {
     return {
-      quantity: 1,
+      counter: 1,
     };
+  },
+  props: ["article", "quantity"],
+  mounted() {
+    this.counter = this.quantity;
   },
   methods: {
     decrement() {
-      this.quantity = Math.max(this.quantity - 1, 1);
+      this.counter--;
     },
     increment() {
-      this.quantity++;
+      this.counter++;
+    },
+  },
+  watch: {
+    counter(value) {
+      if (value == 0) {
+        this.$store.commit("deleteCart", this.article);
+      } else {
+        this.$store.commit("setCart", {
+          article: this.article,
+          quantity: this.counter,
+        });
+      }
     },
   },
 };
