@@ -1,12 +1,10 @@
 <template>
   <footer>
-    <div>
+    <div class="about">
       <h1 class="logo"><span>Brico</span><span>shop</span></h1>
       <p class="footer-text">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non enim
-        debitis ipsa suscipit placeat esse voluptatum optio voluptates
-        reprehenderit maxime atque et eveniet quisquam corporis sapiente sed
-        veritatis, doloribus cupiditate.
+        debitis ipsa suscipit placeat esse voluptatum optio.
       </p>
     </div>
     <div>
@@ -70,10 +68,17 @@
       <h3>Contact</h3>
       <ul class="contact">
         <li>
-          <PlaceSVG class="fill-red" /><div>Route du chateau 12, 1450 Baulmes</div>
+          <PlaceSVG class="fill-red" />
+          <div>Route du chateau 12, 1450 Baulmes</div>
         </li>
-        <li><PhoneSVG class="fill-red" /><div>+41 21 346 78 90</div></li>
-        <li><EmailSVG class="fill-red" /><div>contact@brioshop.ch</div></li>
+        <li>
+          <PhoneSVG class="fill-red" />
+          <div>+41 21 346 78 90</div>
+        </li>
+        <li>
+          <EmailSVG class="fill-red" />
+          <div>contact@brioshop.ch</div>
+        </li>
       </ul>
     </div>
   </footer>
@@ -89,7 +94,7 @@ export default {
     PlaceSVG,
     PhoneSVG,
     EmailSVG,
-  }
+  },
 };
 </script>
 
@@ -97,7 +102,7 @@ export default {
 footer
   display: flex
   flex-direction: row
-  margin: 0 5em
+  margin: 1em 5em
 
 a
   text-decoration: none
@@ -128,6 +133,8 @@ footer > div
 
 .footer-text
   color: #7d7d7d
+  text-align: justify
+  padding-right: 3em
 
 .logo
   font-weight: normal
@@ -140,4 +147,8 @@ footer > div
 .contact li
   display: flex
   align-items: center
+
+@media screen and (max-width: 1000px)
+  .about
+    display: none
 </style>
