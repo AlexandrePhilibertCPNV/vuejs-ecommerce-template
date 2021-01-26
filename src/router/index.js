@@ -3,6 +3,7 @@ import Home from '../views/Home.vue';
 import ShoppingCart from '../views/ShoppingCart.vue';
 import Article from '../views/Article.vue';
 import OrderTracking from '../views/OrderTracking.vue';
+import Category from '../views/Category.vue';
 
 const routes = [
   {
@@ -27,9 +28,9 @@ const routes = [
     meta: {
       breadcrumbs: [
         { name: 'Salles de bains et sanitaires', link: '/category/2' },
-        { name: 'Baignoires', link: '/category/baignoires' }
-      ]
-    }
+        { name: 'Baignoires', link: '/category/baignoires' },
+      ],
+    },
   },
   {
     path: '/orders/:id/tracking',
@@ -38,11 +39,22 @@ const routes = [
     meta: {
       breadcrumbs: [
         { name: 'Commandes', link: '/orders' },
-        { name: 'Suivi' }
-      ]
-    }
-  }
-]
+        { name: 'Suivi' },
+      ],
+    },
+  },
+  {
+    path: '/category/:id',
+    name: Category,
+    component: Category,
+    meta: {
+      breadcrumbs: [
+        { name: 'Assortiment', link: '/categories' },
+        { name: 'Salles de bain et sanitaires' },
+      ],
+    },
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

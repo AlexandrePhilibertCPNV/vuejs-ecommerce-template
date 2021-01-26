@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <router-link :to="`/article/${article.id}`" class="card">
     <div class="content">
       <img class="img" :src="img" alt="" />
       <div>
@@ -14,7 +14,7 @@
       <div class="title">{{ article.title }}</div>
       <div class="discount">{{ discount }}</div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -56,6 +56,8 @@ export default {
   border-radius: 1em
   cursor: pointer
   user-select: none
+  color: inherit
+  text-decoration: none
 
   &:hover
     background-color: #eee

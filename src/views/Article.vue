@@ -27,7 +27,7 @@
           <hr />
           <div class="article-actions">
             <div class="cart-actions">
-              <QuantityPicker :quantity="quantity" />
+              <QuantityPicker :article="article" :quantity="quantity" />
               <button @click="addCart" class="cart-button">
                 Ajouter au panier
               </button>

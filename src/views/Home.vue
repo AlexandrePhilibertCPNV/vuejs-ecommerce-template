@@ -94,19 +94,30 @@ section
   background-repeat: no-repeat
   background-blend-mode: multiply
   background-color: rgba(0,0,0,0.4)
+  margin-top: 2em
 
 .guides-container > *
   flex: calc(50% - 2em) 0
   margin: 1em
 
 .promoted-categories
-  flex-flow: row nowrap
+  flex-flow: row wrap
+  justify-content: flex-start
 
   & > *
-    flex: 1 1 25%
+    flex: 1 1 calc(25% - 2em)
     height: 400px
     margin: 1em
+    min-width: 240px
 
 .newsletter
     margin: 1em
+
+@media screen and (max-width: 1200px)
+  .promoted-categories > *
+    flex-basis: calc(50% - 2em)
+
+@media screen and (max-width: 600px)
+  .guides-container > *
+    flex-basis: 100%
 </style>

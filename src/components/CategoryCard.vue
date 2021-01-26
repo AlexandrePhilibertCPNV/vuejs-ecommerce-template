@@ -33,6 +33,7 @@ export default {
     left: 0
     z-index: -1
     transition: transform 0.5s ease
+    object-fit: cover
 
 .link
     width: max-content

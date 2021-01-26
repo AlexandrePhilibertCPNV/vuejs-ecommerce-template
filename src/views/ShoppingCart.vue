@@ -9,14 +9,20 @@
           <QuantityPicker :quantity="article.quantity" :article="article" />
           <div class="price">
             <span class="currency">CHF</span>
-            <span class="value">{{ (article.price * article.quantity).toFixed(2) }}</span>
+            <span class="value">{{
+              (article.price * article.quantity).toFixed(2)
+            }}</span>
           </div>
         </div>
       </div>
       <div class="total-container">
         <div class="total-title">Montant total</div>
-        <div class="total"><span>CHF</span><span>{{ total.toFixed(2) }}</span></div>
-        <router-link to="/checkout" class="checkout-button"><span>Passer en caisse</span><ChevronRight /></router-link >
+        <div class="total">
+          <span>CHF</span><span>{{ total.toFixed(2) }}</span>
+        </div>
+        <router-link to="/checkout" class="checkout-button"
+          ><span>Passer en caisse</span><ChevronRight
+        /></router-link>
       </div>
     </div>
   </div>
@@ -34,7 +40,7 @@ export default {
     },
     total() {
       return this.articles.reduce((acc, curr) => {
-        return acc + (curr.price * curr.quantity);
+        return acc + curr.price * curr.quantity;
       }, 0);
     },
   },
@@ -111,5 +117,4 @@ export default {
 
   & svg
     fill: #fff
-
 </style>
