@@ -3,7 +3,7 @@
     <div class="container">
       <div class="top-container">
         <div class="left-container">
-          <img src="https://picsum.photos/600/400" alt="" />
+          <img class="img" src="https://picsum.photos/600/400" alt="" />
           <div class="image-scoller-container">
             <button><ChevronLeftSVG /></button>
             <div class="image-scoller">
@@ -171,6 +171,13 @@ export default {
   font-size: 1.5em
   font-weight: normal
 
+img
+  background-color: #aaa
+
+.img
+  width: 100%
+  height: 400px
+
 hr
   border: none
   border-bottom: 1px solid #d7d7d7
@@ -185,6 +192,7 @@ hr
   & .image-scoller
     display: flex
     min-width: 0
+    width: 100%
 
     & > img
       flex: 1 1 25%
