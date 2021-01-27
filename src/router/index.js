@@ -5,6 +5,7 @@ import Article from '../views/Article.vue';
 import OrderTracking from '../views/OrderTracking.vue';
 import Category from '../views/Category.vue';
 import Orders from '../views/Orders.vue';
+import Favorites from '../views/Favorites.vue';
 import NotFound from '../views/NotFound.vue';
 
 const routes = [
@@ -62,8 +63,18 @@ const routes = [
     component: Orders,
     meta: {
       breadcrumbs: [
-        { name: 'Mon compte', link: '/account'},
-        { name: 'Commanges'}
+        { name: 'Mon compte', link: '/account' },
+        { name: 'Commandes' }
+      ]
+    }
+  },
+  {
+    path: '/favorites',
+    name: Favorites,
+    component: Favorites,
+    meta: {
+      breadcrumbs: [
+        { name: 'Favoris' }
       ]
     }
   },

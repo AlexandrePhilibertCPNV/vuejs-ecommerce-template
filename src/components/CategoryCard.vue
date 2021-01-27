@@ -1,5 +1,5 @@
 <template>
-  <router-link to="" class="category-card">
+  <router-link :to="`/category/${category.id}`" class="category-card">
     <img class="img" :src="`https://picsum.photos/id/${category.id}/300/500`" alt="" />
     <button class="link">{{ category?.name }}</button>
   </router-link>

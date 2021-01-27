@@ -12,19 +12,19 @@
         <h3>Liens rapides</h3>
         <ul>
           <li>
-            <router-link to="">Succurcales</router-link>
+            <router-link to="/">Succurcales</router-link>
           </li>
           <li>
-            <router-link to="">Contact</router-link>
+            <router-link to="/">Contact</router-link>
           </li>
           <li>
-            <router-link to="">Protection des données</router-link>
+            <router-link to="/">Protection des données</router-link>
           </li>
           <li>
-            <router-link to="">Mentions légales</router-link>
+            <router-link to="/">Mentions légales</router-link>
           </li>
           <li>
-            <router-link to="">Conditions générales de vente (CGV)</router-link>
+            <router-link to="/">Conditions générales de vente (CGV)</router-link>
           </li>
         </ul>
       </div>
@@ -32,19 +32,19 @@
         <h3>Service clientèle</h3>
         <ul>
           <li>
-            <router-link to="">Commandes</router-link>
+            <router-link to="/orders">Commandes</router-link>
           </li>
           <li>
-            <router-link to="">Livraison et retraits</router-link>
+            <router-link to="/">Livraison et retraits</router-link>
           </li>
           <li>
-            <router-link to="">Tous les services</router-link>
+            <router-link to="/">Tous les services</router-link>
           </li>
           <li>
-            <router-link to="">Modes de paiements</router-link>
+            <router-link to="/">Modes de paiements</router-link>
           </li>
           <li>
-            <router-link to="">Retour et garanties</router-link>
+            <router-link to="/">Retour et garanties</router-link>
           </li>
         </ul>
       </div>
@@ -52,16 +52,16 @@
         <h3>Réseaux sociaux</h3>
         <ul>
           <li>
-            <router-link to="">Facebook</router-link>
+            <router-link to="/">Facebook</router-link>
           </li>
           <li>
-            <router-link to="">Twitter</router-link>
+            <router-link to="/">Twitter</router-link>
           </li>
           <li>
-            <router-link to="">Instagram</router-link>
+            <router-link to="/">Instagram</router-link>
           </li>
           <li>
-            <router-link to="">Pinterest</router-link>
+            <router-link to="/">Pinterest</router-link>
           </li>
         </ul>
       </div>
@@ -106,7 +106,7 @@ export default {
 footer
   display: flex
   justify-content: center
-  margin: 1em 1em
+  margin: 1em 0
   border-top: 1px solid #d7d7d7
   padding-top: 1em
   width: 100%
@@ -122,6 +122,9 @@ footer
 a
   text-decoration: none
   color: inherit
+
+  &:hover
+    color: #c80000
 
 h3
   font-weight: bold

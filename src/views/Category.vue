@@ -45,7 +45,7 @@ export default {
     category() {
       return categories.find(
         (category) => category.id == this.$route.params.id
-      );
+      ) || [];
     },
     articles() {
       return articles.filter(art => art.category == this.$route.params.id);
@@ -59,6 +59,7 @@ export default {
     display: flex
     justify-content: center
     margin: 0 2em
+    min-height: calc(100vh - 30em)
 
     & > div
         flex: 1 1 auto

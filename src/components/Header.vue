@@ -20,7 +20,7 @@
           <button><SearchSVG /></button>
         </div>
         <div class="actions">
-          <router-link :data-badge="favorites.length" to="/"
+          <router-link :data-badge="favorites.length" to="/favorites"
             ><FavoriteSVG
           /></router-link>
           <router-link :data-badge="cart.length" to="/cart"

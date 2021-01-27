@@ -13,6 +13,7 @@
     display: flex
     justify-content: center
     margin: 0 2em
+    min-height: calc(100vh - 30em)
 
     & > div
         flex: 1 1 auto

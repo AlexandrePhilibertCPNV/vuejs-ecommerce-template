@@ -33,7 +33,7 @@
             <div class="price">
               <span class="currency">CHF</span>
               <span class="value">{{
-                (article.price * article.quantity).toFixed(2)
+                (article.prices.current * article.quantity).toFixed(2)
               }}</span>
             </div>
           </div>

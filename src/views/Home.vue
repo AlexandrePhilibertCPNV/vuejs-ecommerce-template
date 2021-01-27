@@ -108,6 +108,7 @@ section
   background-blend-mode: multiply
   background-color: rgba(0,0,0,0.4)
   margin-top: 2em
+  background-size: cover
 
 .guides-container > *
   flex: calc(50% - 2em) 0
