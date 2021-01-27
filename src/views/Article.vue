@@ -27,7 +27,7 @@
           <hr />
           <div class="article-actions">
             <div class="cart-actions">
-              <QuantityPicker :article="article" :quantity="quantity" />
+              <QuantityPicker @quantity-change="changeQuantity" :quantity="quantity" />
               <button @click="addCart" class="cart-button">
                 Ajouter au panier
               </button>
@@ -107,6 +107,16 @@ export default {
     ChevronRightSVG,
     FavoriteSVG,
   },
+  data() {
+    return {
+      quantity: 1,
+    }
+  },
+  mounted() {
+    let article = this.$store.state.cart.find(article => article.id == this.$route.params.id);
+    
+    this.quantity = article ? article.quantity : 1;
+  },
   methods: {
     addCart() {
       this.$store.commit("addCart", {
@@ -117,6 +127,9 @@ export default {
     toggleFavorite() {
       this.$store.commit("toggleFavorite", this.article);
     },
+    changeQuantity(quantity) {
+      this.quantity = quantity;
+    }
   },
   computed: {
     article() {
@@ -124,13 +137,6 @@ export default {
     },
     cart() {
       return this.$store.state.cart;
-    },
-    quantity() {
-      let article = this.$store.state.cart.find(article => article.id == this.$route.params.id);
-      
-      if (article) return article.quantity;
-
-      return 1;
     },
     isInFavorites() {
       return this.$store.state.favorites.find(
@@ -208,6 +214,10 @@ hr
 
     &:hover
       background-color: #dfdfdf
+
+.rating
+  height: 2em
+  margin-right: .5em
 
 .rating-container
   display: flex

@@ -90,6 +90,14 @@ select
     margin: 1em -1em
 
 .article
-    flex: 0 1 calc(25% - 2em)
+    flex: 1 1 calc(25% - 2em)
     margin: .5em 1em
+    min-width: 250px
+
+@media screen and (max-width: 600px)
+  .actions
+    display: none
+
+  .articles
+    margin: 0 2em
 </style>

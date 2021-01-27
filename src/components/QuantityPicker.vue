@@ -21,7 +21,7 @@ export default {
   },
   props: ["article", "quantity"],
   mounted() {
-    this.counter = this.quantity;
+    this.counter = this.quantity ? this.quantity : 1;
   },
   methods: {
     decrement() {
@@ -33,13 +33,17 @@ export default {
   },
   watch: {
     counter(value) {
-      if (value === 0) {
-        this.$store.commit("deleteCart", this.article);
+      if (this.article) {
+          if (value === 0) {
+          this.$store.commit("deleteCart", this.article);
+        } else {
+          this.$store.commit("setCart", {
+            article: this.article,
+            quantity: this.counter,
+          });
+        }
       } else {
-        this.$store.commit("setCart", {
-          article: this.article,
-          quantity: this.counter,
-        });
+        this.$emit('quantity-change', this.counter);
       }
     },
   },

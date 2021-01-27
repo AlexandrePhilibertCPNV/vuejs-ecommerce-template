@@ -2,13 +2,11 @@
   <header>
     <div class="top-header">
       <div>
-        <router-link to=""
-          ><PhoneSVG /><span>contact@bricoshop.ch</span></router-link
+        <a href="mailto:contact@bricoshop.ch"><EmailSVG /><span>contact@bricoshop.ch</span></a>
+        <router-link to="/"
+          ><PhoneSVG /><span>+41 21 345 67 89</span></router-link
         >
-        <router-link to=""
-          ><EmailSVG /><span>+41 21 345 67 89</span></router-link
-        >
-        <router-link to=""><StoreSVG /><span>Succurcales</span></router-link>
+        <router-link to="/"><StoreSVG /><span>Succurcales</span></router-link>
         <div class="lang"><a href="">DE</a>|<a href="">FR</a></div>
       </div>
     </div>
@@ -22,7 +20,7 @@
           <button><SearchSVG /></button>
         </div>
         <div class="actions">
-          <router-link :data-badge="favorites.length" to=""
+          <router-link :data-badge="favorites.length" to="/"
             ><FavoriteSVG
           /></router-link>
           <router-link :data-badge="cart.length" to="/cart"

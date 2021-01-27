@@ -3,6 +3,7 @@
     <div>
       <h1>Panier</h1>
       <div>
+        <p class="empty" v-if="articles.length == 0">Vous n'avez aucun article dans votre panier</p>
         <div class="article" v-for="article in articles" :key="article.id">
           <img :src="`https://picsum.photos/id/${article.id}/200/160`" alt="" />
           <h2 class="name">{{ article.name }}</h2>
@@ -10,7 +11,7 @@
           <div class="price">
             <span class="currency">CHF</span>
             <span class="value">{{
-              (article.price * article.quantity).toFixed(2)
+              (article.prices.current * article.quantity).toFixed(2)
             }}</span>
           </div>
         </div>
@@ -40,7 +41,7 @@ export default {
     },
     total() {
       return this.articles.reduce((acc, curr) => {
-        return acc + curr.price * curr.quantity;
+        return acc + curr.prices.current * curr.quantity;
       }, 0);
     },
   },
@@ -56,6 +57,10 @@ export default {
     flex: 1 1 auto
     max-width: 1200px
 
+.empty
+  text-align: center
+  margin: 5em 0
+
 .article
   display: flex
   align-items: center
@@ -65,9 +70,11 @@ export default {
     border-top: 1px solid #d7d7d7
 
   & > img
-    padding: 1em
-    margin: 1em
+    margin: 1.5em
     object-fit: cover
+    width: 100%
+    height: 150px
+    background-color: #aaa
 
   & > .name
     font-weight: normal
