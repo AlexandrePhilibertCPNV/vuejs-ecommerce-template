@@ -24,7 +24,7 @@
         "name": "Barbecue au gaz Campingaz 4 Series RBS LX 3 brûleurs",
         "prices": {
             "default": 649.00,
-            "current": 649.00
+            "current": 499.00
         },
         "rating": 4.5,
         "category": 1
@@ -44,7 +44,7 @@
         "name": "Écrou à frapper 10x13 mm galvanisé 100 unités",
         "prices": {
             "default": 16.40,
-            "current": 16.40
+            "current": 10.00
         },
         "rating": 2.5,
         "category": 1
