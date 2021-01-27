@@ -1,10 +1,8 @@
 <template>
   <div class="rating">
-    <button><StarSVG /></button>
-    <button><StarSVG /></button>
-    <button><StarSVG /></button>
-    <button><StarHalfSVG /></button>
-    <button><StarOutlineSVG /></button>
+    <button v-for="star in Math.floor(rating)" :key="star"><StarSVG /></button>
+    <button><StarHalfSVG v-if="!Number.isInteger(rating)"/></button>
+    <button v-for="star in Math.floor(5 - rating)" :key="star"><StarOutlineSVG /></button>
   </div>
 </template>
 
@@ -14,6 +12,7 @@ import StarOutlineSVG from "../assets/star-outline.svg";
 import StarHalfSVG from "../assets/star-half.svg";
 
 export default {
+  props: ["rating"],
   components: {
     StarSVG,
     StarOutlineSVG,
