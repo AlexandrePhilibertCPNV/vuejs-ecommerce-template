@@ -2,115 +2,191 @@
     {
         "id": 1,
         "name": "Bois de construction massif 60x100x3000 mm épicéa/sapin",
-        "price": 10.20,
-        "rating": 4.5
+        "prices": {
+            "default": 10.20,
+            "current": 10.20
+        },
+        "rating": 4.5,
+        "category": 1
     },
     {
         "id": 2,
         "name": "Lattes collées par jointure digitale épicéa/sapin 25x25x2500 mm",
-        "price": 4.00,
-        "rating": 3.5
+        "prices": {
+            "default": 4.00,
+            "current": 4.00
+        },
+        "rating": 3.5,
+        "category": 1
     },
     {
         "id": 3,
         "name": "Barbecue au gaz Campingaz 4 Series RBS LX 3 brûleurs",
-        "price": 649.00,
-        "rating": 4.5
+        "prices": {
+            "default": 649.00,
+            "current": 649.00
+        },
+        "rating": 4.5,
+        "category": 1
     },
     {
         "id": 4,
         "name": "Évier Piccante Vanda 45 Eurogranit granit-graphite avec bonde à panier et bouchon",
-        "price": 146.00,
-        "rating": 
+        "prices": {
+            "default": 146.00,
+            "current": 146.00
+        },
+        "rating": 4,
+        "category": 1
     },
     {
         "id": 5,
         "name": "Écrou à frapper 10x13 mm galvanisé 100 unités",
-        "price": 16.40,
-        "rating": 2.5
+        "prices": {
+            "default": 16.40,
+            "current": 16.40
+        },
+        "rating": 2.5,
+        "category": 1
     },
     {
         "id": 6,
         "name": "Presse coupante pour vinyles et stratifiés Wolfcraft VLC 800",
-        "price": 69.00,
-        "rating": 4
+        "prices": {
+            "default": 69.00,
+            "current": 69.00
+        },
+        "rating": 4,
+        "category": 1
     },
     {
         "id": 7,
         "name": "Niveau à bulle Stabila Type 70, 200 cm",
-        "price": 43.00,
-        "rating": 3
+        "prices": {
+            "default": 43.00,
+            "current": 43.00
+        },
+        "rating": 3,
+        "category": 2
     },
     {
         "id": 8,
         "name": "Bétonnière HM P 135 L",
-        "price": 234.00,
-        "rating": 4.5
+        "prices": {
+            "default": 234.00,
+            "current": 234.00
+        },
+        "rating": 4.5,
+        "category": 2
     },
     {
         "id": 9,
         "name": "Plaque vibrante Zipper ZI-RPE60C",
-        "price": 399.00,
-        "rating": 5
+        "prices": {
+            "default": 399.00,
+            "current": 399.00
+        },
+        "rating": 5,
+        "category": 2
     },
     {
         "id": 10,
         "name": "Brouette Capito Eurocar 100 litres",
-        "price": 129.00,
-        "rating": 4.5
+        "prices": {
+            "default": 129.00,
+            "current": 129.00
+        },
+        "rating": 4.5,
+        "category": 1
     },
     {
         "id": 11,
         "name": "Cône de signalisation orange/blanc réfléchissant hauteur 50 cm",
-        "price": 16.50,
-        "rating": 5
+        "prices": {
+            "default": 16.50,
+            "current": 16.50
+        },
+        "rating": 5,
+        "category": 2
     },
     {
         "id": 12,
         "name": "Moteur de bétonnière",
-        "price": 122.00,
-        "rating": 2
+        "prices": {
+            "default": 122.00,
+            "current": 122.00
+        },
+        "rating": 2,
+        "category": 1
     },
     {
         "id": 13,
         "name": "Propane, remplissage de 11 kg, bouteille consignée",
-        "price": 36.00,
-        "rating": 5
+        "prices": {
+            "default": 36.00,
+            "current": 36.00
+        },
+        "rating": 5,
+        "category": 2
     },
     {
         "id": 14,
         "name": "Réducteur de pression avec 2 manomètres pour bouteilles industrielles",
-        "price": 59.00,
-        "rating": 3.5
+        "prices": {
+            "default": 59.00,
+            "current": 59.00
+        },
+        "rating": 3.5,
+        "category": 1
     },
     {
         "id": 15,
         "name": "Lampadaire Eglo Townshend 5 60W E27 noir marron",
-        "price": 105.00,
-        "rating": 5
+        "prices": {
+            "default": 105.00,
+            "current": 105.00
+        },
+        "rating": 5,
+        "category": 2
     },
     {
         "id": 16,
         "name": "Réglette lumineuse LED EEK A+ blanc neutre 6100 Lumen (70 W)",
-        "price": 59.95,
-        "rating": 3.5
+        "prices": {
+            "default": 59.95,
+            "current": 59.95
+        },
+        "rating": 3.5,
+        "category": 1
     },
     {
         "id": 17,
         "name": "Couche primaire de crépi 10 l",
-        "price": 43.95,
-        "rating": 4
+        "prices": {
+            "default": 43.95,
+            "current": 43.95
+        },
+        "rating": 4,
+        "category": 2
     },
     {
         "id": 18,
         "name": "Apprêt couche de fond acrylique 5 l",
-        "price": 19.90,
-        "rating": 4
+        "prices": {
+            "default": 19.90,
+            "current": 19.90
+        },
+        "rating": 4,
+        "category": 1
     },
     {
         "id": 19,
         "name": "Mosaïque en céramique CIM HX9 CR 25,6x29,5 cm",
-        "price": 6.50,
-        "rating": 4.5
+        "prices": {
+            "default": 6.50,
+            "current": 6.50
+        },
+        "rating": 4.5,
+        "category": 1
     }
 ]
