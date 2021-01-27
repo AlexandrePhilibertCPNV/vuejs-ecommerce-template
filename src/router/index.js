@@ -4,6 +4,7 @@ import ShoppingCart from '../views/ShoppingCart.vue';
 import Article from '../views/Article.vue';
 import OrderTracking from '../views/OrderTracking.vue';
 import Category from '../views/Category.vue';
+import Orders from '../views/Orders.vue';
 import NotFound from '../views/NotFound.vue';
 
 const routes = [
@@ -54,6 +55,17 @@ const routes = [
         { name: 'Salles de bain et sanitaires' },
       ],
     },
+  },
+  {
+    path: '/orders',
+    name: Orders,
+    component: Orders,
+    meta: {
+      breadcrumbs: [
+        { name: 'Mon compte', link: '/account'},
+        { name: 'Commanges'}
+      ]
+    }
   },
   {
     path: '/:pathMatch(.*)*',

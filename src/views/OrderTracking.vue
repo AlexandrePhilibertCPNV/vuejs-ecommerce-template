@@ -21,13 +21,13 @@
         </div>
       </div>
       <div class="articles">
-        <div class="article" v-for="article in articles" :key="article.id">
+        <div class="article" v-for="article in order.articles" :key="article.id">
           <h2 class="name">{{ article.name }}</h2>
           <div class="quantity">{{ article.quantity }}x</div>
           <div class="price">
             <span class="currency">CHF</span>
             <span class="value">{{
-              (article.price * article.quantity).toFixed(2)
+              (article.prices.current * article.quantity).toFixed(2)
             }}</span>
           </div>
         </div>
@@ -39,54 +39,13 @@
 </template>
 
 <script>
+import orders from "../data/orders.json";
+
 import TrackingTimeline from "../components/TrackingTimeline.vue";
 
 export default {
   components: {
     TrackingTimeline,
-  },
-  data() {
-    return {
-      order: {
-        date: 1611676311702,
-        id: 239487,
-        articles: [
-          {
-            name: "Whirlpool Samba avec inverseur de couleur blanc",
-            price: 1995.95,
-            id: 1,
-            quantity: 3,
-          },
-          {
-            name: "Wfsdfsdfsdfsd sdf sdf c",
-            price: 199.95,
-            id: 2,
-            quantity: 4,
-          },
-        ],
-        paimentStatus: "payed",
-        tracking: [
-          {
-            status: "order_placed",
-            done: true,
-            timestamp: 1611676311702,
-          },
-          {
-            status: "paiment_accepted",
-            done: true,
-            timestamp: 1611676361702,
-          },
-          {
-            status: "delivering",
-            done: false,
-          },
-          {
-            status: "delivered",
-            done: false,
-          },
-        ],
-      },
-    };
   },
   computed: {
     paimentStatus() {
@@ -97,13 +56,13 @@ export default {
           return "indéfini";
       }
     },
-    total() {
-      return this.$store.state.cart.reduce((acc, curr) => {
-        return acc + curr.price * curr.quantity;
-      }, 0);
+    order() {
+      return orders.find(order => order.id == this.$route.params.id);
     },
-    articles() {
-      return this.$store.state.cart;
+    total() {
+      return this.order.articles.reduce((acc, curr) => {
+        return acc + curr.prices.current * curr.quantity;
+      }, 0);
     },
   },
 };
@@ -134,9 +93,9 @@ h1
     & > div
       margin-right: 1em
 
-      & > div:first-child
-        margin: 0 .5em
-        font-weight: bold
+    & > div:first-child
+      margin: 0 .5em
+      font-weight: bold
 
 .price-total
   color: #797979
@@ -158,27 +117,27 @@ h1
   &:first-child
     border-top: 1px solid #d7d7d7
 
-    & > img
-      padding: 1em
-      margin: 1em
-      object-fit: cover
+  & > img
+    padding: 1em
+    margin: 1em
+    object-fit: cover
 
-    & > .name
-      font-weight: normal
-      font-size: 1em
-      flex-grow: 3
+  & > .name
+    font-weight: normal
+    font-size: 1em
+    flex-grow: 3
 
-    & > .quantity
-      padding: 1em
+  & > .quantity
+    padding: 1em
 
-    & > *
-      flex: 1 1
+  & > *
+    flex: 1 1
 
-    & > .price
-      text-align: right
+  & > .price
+    text-align: right
 
-      & > .currency
-        margin-right: .5em
+    & > .currency
+      margin-right: .5em
 
 .tracking-timeline
   margin: 3em 0
