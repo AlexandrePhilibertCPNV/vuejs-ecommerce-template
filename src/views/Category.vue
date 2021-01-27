@@ -25,17 +25,7 @@
         </div>
       </div>
       <div class="articles">
-        <Card class="article" />
-        <Card class="article" />
-        <Card class="article" />
-        <Card class="article" />
-        <Card class="article" />
-        <Card class="article" />
-        <Card class="article" />
-        <Card class="article" />
-        <Card class="article" />
-        <Card class="article" />
-        <Card class="article" />
+        <Card v-for="article in articles" :key="article.id" :article="article" class="article" />
       </div>
     </div>
   </div>
@@ -43,6 +33,7 @@
 
 <script>
 import categories from "../data/categories.json";
+import articles from "../data/articles.json";
 
 import Card from "../components/Card.vue";
 
@@ -56,6 +47,9 @@ export default {
         (category) => category.id == this.$route.params.id
       );
     },
+    articles() {
+      return articles.filter(art => art.category == this.$route.params.id);
+    }
   },
 };
 </script>

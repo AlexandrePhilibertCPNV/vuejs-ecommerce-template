@@ -22,7 +22,7 @@
           </div>
           <div class="price">
             <span class="currency">CHF</span
-            ><span class="value">{{ article.price.toLocaleString() }}</span>
+            ><span class="value">{{ article.prices.current.toFixed(2) }}</span>
           </div>
           <hr />
           <div class="article-actions">
@@ -63,7 +63,7 @@
             <div class="specs">
               <div>
                 <div>Numéro d'article</div>
-                <div>630774500000</div>
+                <div>{{article.id}}</div>
               </div>
               <div>
                 <div>Type de traction</div>
@@ -90,6 +90,8 @@
 </template>
 
 <script>
+import articles from "../data/articles.json";
+
 import Rating from "../components/Rating.vue";
 import QuantityPicker from "../components/QuantityPicker.vue";
 
@@ -98,16 +100,6 @@ import ChevronRightSVG from "../assets/chevron-right.svg";
 import FavoriteSVG from "../assets/favorite.svg";
 
 export default {
-  data() {
-    return {
-      quantity: 1,
-      article: {
-        name: "Whirlpool Samba avec inverseur de couleur blanc",
-        price: 1995.95,
-        id: 1,
-      },
-    };
-  },
   components: {
     Rating,
     QuantityPicker,
@@ -127,8 +119,18 @@ export default {
     },
   },
   computed: {
+    article() {
+      return articles.find((article) => article.id == this.$route.params.id);
+    },
     cart() {
       return this.$store.state.cart;
+    },
+    quantity() {
+      let article = this.$store.state.cart.find(article => article.id == this.$route.params.id);
+      
+      if (article) return article.quantity;
+
+      return 1;
     },
     isInFavorites() {
       return this.$store.state.favorites.find(

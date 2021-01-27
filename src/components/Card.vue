@@ -2,35 +2,29 @@
   <router-link :to="`/article/${article.id}`" class="card">
     <div class="content">
       <img class="img" :src="img" alt="" />
-      <div>
+      <div class="row">
         <div class="price-container">
-          <span class="price">{{ article.prices.current }}.-</span>
+          <span class="price">{{ article.prices.current.toFixed(2) }}.-</span>
           <span class="sale-text" v-if="isOnSale">
-            au lieu de {{ article.prices.default }}.-</span
+            au lieu de {{ article.prices.default.toFixed(2) }}.-</span
           >
         </div>
-        <div class="rating"></div>
+        <Rating :rating="article.rating"/>
       </div>
-      <div class="title">{{ article.title }}</div>
-      <div class="discount">{{ discount }}</div>
+      <div class="title">{{ article.name }}</div>
+      <div v-if="isOnSale" class="discount">{{ discount }}</div>
     </div>
   </router-link>
 </template>
 
 <script>
+import Rating from './Rating.vue';
+
 export default {
-  data() {
-    return {
-      article: {
-        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-        prices: {
-          default: 199,
-          current: 99,
-        },
-        id: 1,
-      },
-    };
+  components: {
+    Rating,
   },
+  props: ['article'],
   computed: {
     isOnSale() {
       return this.article.prices.current != this.article.prices.default;
@@ -67,6 +61,10 @@ export default {
 
   & > *
     margin: .5em 0
+
+.row
+ display: flex
+ justify-content: space-between 
 
 .img
   width: 100%

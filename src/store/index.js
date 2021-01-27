@@ -2,20 +2,7 @@ import { createStore } from 'vuex';
 
 export default createStore({
   state: {
-    cart: [
-      {
-        name: "Whirlpool Samba avec inverseur de couleur blanc",
-        price: 1995.95,
-        id: 1,
-        quantity: 3,
-      },
-      {
-        name: "Wfsdfsdfsdfsd sdf sdf c",
-        price: 199.95,
-        id: 2,
-        quantity: 4,
-      },
-    ],
+    cart: [],
     favorites: [],
   },
   mutations: {
