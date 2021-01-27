@@ -4,6 +4,7 @@ import ShoppingCart from '../views/ShoppingCart.vue';
 import Article from '../views/Article.vue';
 import OrderTracking from '../views/OrderTracking.vue';
 import Category from '../views/Category.vue';
+import NotFound from '../views/NotFound.vue';
 
 const routes = [
   {
@@ -54,6 +55,14 @@ const routes = [
       ],
     },
   },
+  {
+    path: '/:pathMatch(.*)*',
+    name: NotFound,
+    component: NotFound,
+    meta: {
+      breadcrumbs: []
+    },
+  }
 ];
 
 const router = createRouter({
