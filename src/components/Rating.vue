@@ -1,8 +1,10 @@
 <template>
   <div class="rating">
     <button v-for="star in Math.floor(rating)" :key="star"><StarSVG /></button>
-    <button><StarHalfSVG v-if="!Number.isInteger(rating)"/></button>
-    <button v-for="star in Math.floor(5 - rating)" :key="star"><StarOutlineSVG /></button>
+    <button v-if="!Number.isInteger(rating)"><StarHalfSVG /></button>
+    <button v-for="star in Math.floor(5 - rating)" :key="star">
+      <StarOutlineSVG />
+    </button>
   </div>
 </template>
 
@@ -31,6 +33,9 @@ button
   border: none
   background: none
   cursor: pointer
+  width: 1em
+  height: 1em
+  margin-right: .25em
 
   & > svg
     fill: #f39e1d

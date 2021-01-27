@@ -35,7 +35,7 @@ export default {
     discount() {
       return (
         Math.round(
-          (this.article.prices.current / this.article.prices.default) * 100
+          (1 - (this.article.prices.current / this.article.prices.default)) * 100
         ) + "%"
       );
     },
@@ -68,8 +68,9 @@ export default {
 
 .img
   width: 100%
+  height: 250px
   max-height: 250px
-  background-color: #555
+  background-color: #aaa
   object-fit: cover
 
 .price

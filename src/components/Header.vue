@@ -28,7 +28,7 @@
           <router-link :data-badge="cart.length" to="/cart"
             ><ShoppingCartSVG
           /></router-link>
-          <router-link class="account" to=""><AccountSVG /></router-link>
+          <router-link class="account" to="/account"><AccountSVG /></router-link>
         </div>
       </div>
     </div>

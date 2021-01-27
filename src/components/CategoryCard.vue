@@ -1,6 +1,6 @@
 <template>
   <router-link to="" class="category-card">
-    <img class="img" src="https://picsum.photos/300/500" alt="" />
+    <img class="img" :src="`https://picsum.photos/id/${category.id}/300/500`" alt="" />
     <button class="link">{{ category?.name }}</button>
   </router-link>
 </template>
@@ -34,6 +34,7 @@ export default {
     z-index: -1
     transition: transform 0.5s ease
     object-fit: cover
+    background-color: #aaa
 
 .link
     width: max-content

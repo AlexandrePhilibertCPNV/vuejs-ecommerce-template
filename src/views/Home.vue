@@ -4,10 +4,7 @@
     <section>
       <h1>Les offres actuelles</h1>
       <div class="current-offers">
-        <Card class="card" />
-        <Card class="card" />
-        <Card class="card" />
-        <Card class="card" />
+        <Card v-for="article in offers" :key="article.id" :article="article" class="card" />
       </div>
     </section>
     <section class="guides" :style="`background-image: url(${GuidesImg})`">
@@ -21,10 +18,7 @@
     <section>
       <h1>Les meilleures categories</h1>
       <div class="promoted-categories">
-        <CategoryCard :category="categories[0].subcategories[1]" />
-        <CategoryCard :category="categories[1].subcategories[3]" />
-        <CategoryCard :category="categories[3].subcategories[5]" />
-        <CategoryCard :category="categories[3]" />
+        <CategoryCard v-for="category in bestCategories" :key="category.id" :category="category" />
       </div>
     </section>
     <section>
@@ -43,6 +37,7 @@ import CategoryCard from "../components/CategoryCard.vue";
 import Newsletter from "../components/Newsletter.vue";
 
 import categories from "../data/categories.json";
+import articles from "../data/articles.json";
 
 import GuidesImg from "../assets/guides.jpg";
 
@@ -52,6 +47,24 @@ export default {
       GuidesImg,
       categories,
     };
+  },
+  computed: {
+    offers() {
+      return [
+        articles[2],
+        articles[14],
+        articles[6],
+        articles[4],
+      ];
+    },
+    bestCategories() {
+      return [
+        categories[0],
+        categories[1],
+        categories[3],
+        categories[4],
+      ];
+    }
   },
   components: {
     Jumbotron,
